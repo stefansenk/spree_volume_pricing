@@ -5,4 +5,5 @@ class Spree::VolumePriceModel < ActiveRecord::Base
     reject_if: proc { |volume_price|
       volume_price[:amount].blank? && volume_price[:range].blank?
     }
+   belongs_to :store
 end
