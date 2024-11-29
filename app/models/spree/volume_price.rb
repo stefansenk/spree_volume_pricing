@@ -4,6 +4,7 @@ class Spree::VolumePrice < ActiveRecord::Base
   belongs_to :spree_role, class_name: 'Spree::Role', foreign_key: 'role_id', optional: true
 
   acts_as_list scope: [:variant_id, :volume_price_model_id]
+  belongs_to :store
 
   validates :amount, presence: true
   validates :discount_type,

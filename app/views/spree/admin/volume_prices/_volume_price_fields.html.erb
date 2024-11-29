@@ -13,7 +13,7 @@
   </td>
   <td>
     <%= error_message_on(f.object, :range) %>
-    <%= f.text_field :range, size: 10, class: 'form-control' %>
+    <%= f.text_field :range, size: 10, class: 'form-control', placeholder: 'e.g: 1..10' %>
   </td>
   <td>
     <%= error_message_on(f.object, :amount) %>
@@ -26,6 +26,9 @@
   <td>
     <%= error_message_on(f.object, :role_id) %>
     <%= f.collection_select(:role_id, Spree::Role.all, :id, :name, { include_blank: Spree.t('match_choices.none') }, { class: 'select2' }) %>
+  </td>
+  <td>
+    <%= f.hidden_field :store_id, value: current_store.id %>
   </td>
   <td class="actions">
     <%= link_to_icon_remove_fields f %>
