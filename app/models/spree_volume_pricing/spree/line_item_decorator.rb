@@ -12,7 +12,7 @@ module SpreeVolumePricing
       def update_price
         vprice = variant.volume_price(quantity, order.user, order)
 
-        return self.price = vprice if price.present? && vprice <= variant.price
+        return self.price = vprice if vprice.present? && vprice <= variant.price
         super
       end
     end
